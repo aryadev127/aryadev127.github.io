@@ -5,5 +5,13 @@ export default function getJoke(imgSelection) {
     .then(json => {
       let image = document.getElementById(imgSelection);
       image.src = json.data.url;
+      
+      image.onclick = function() {
+        let loadView = document.querySelector(".loading")
+        loadView.classList.toggle("loadon")
+        setTimeout(function() {
+          loadView.classList.toggle("loadon")
+        }, 1000);
+      }
   });
 }
