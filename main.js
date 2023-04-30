@@ -16,4 +16,12 @@ window.addEventListener("scroll", function() {
 
 
 candaan("joke")
-document.getElementById('joke').addEventListener('click', () => candaan('joke'))
+document.getElementById('joke').addEventListener('click', () => {
+      let loadView = document.querySelector(".loading")
+      loadView.classList.toggle("loadon")
+      setTimeout(function() {
+        loadView.classList.toggle("loadon")
+      }, 1000);
+    candaan('joke')
+})
+
